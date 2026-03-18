@@ -16,13 +16,10 @@ function plugin_validationlock_pre_item_update(Ticket $item) {
       return;
    }
 
-   Toolbox::logInFile('validationlock', "Hook pre_item_update called for Ticket ID: " . $item->fields['id'] . "\n");
-
    // Business logic is handled by TicketValidator class
    $validator = new PluginValidationlockTicketValidator();
    
    if (!$validator->validateStatusChange($item)) {
-      Toolbox::logInFile('validationlock', "Blocking status change for Ticket ID: " . $item->fields['id'] . "\n");
       // Cancel the update
       $item->input = [];
       return false;
@@ -41,12 +38,9 @@ function plugin_validationlock_pre_item_add(ITILSolution $item) {
       return;
    }
 
-   Toolbox::logInFile('validationlock', "Hook pre_item_add called for Solution on Ticket ID: " . ($item->input['items_id'] ?? 'unknown') . "\n");
-
    $validator = new PluginValidationlockTicketValidator();
    
    if (!$validator->validateSolutionAddition($item)) {
-      Toolbox::logInFile('validationlock', "Blocking solution addition for Ticket ID: " . ($item->input['items_id'] ?? 'unknown') . "\n");
       // Cancel the addition
       $item->input = [];
       return false;

@@ -12,13 +12,6 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
     * @return bool
     */
    public function validateStatusChange(Ticket $ticket) {
-      // DEBUG: Log constants
-      if (class_exists('CommonITILValidation')) {
-         Toolbox::logInFile('validationlock', "DEBUG: WAITING constant: " . CommonITILValidation::WAITING . "\n");
-         Toolbox::logInFile('validationlock', "DEBUG: ACCEPTED constant: " . CommonITILValidation::ACCEPTED . "\n");
-         Toolbox::logInFile('validationlock', "DEBUG: REFUSED constant: " . CommonITILValidation::REFUSED . "\n");
-      }
-
       // Check if the status is changing to SOLVED or CLOSED
       if (!isset($ticket->input['status'])) {
          return true;
@@ -73,7 +66,7 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
          return false;
       }
 
-      // Use constants if available, fallback to 2 (detected in user env) or 1 (standard GLPI)
+      // Use constants if available, fallback to 1 (standard GLPI)
       $waiting_status = 1;
       if (class_exists('CommonITILValidation')) {
          $waiting_status = CommonITILValidation::WAITING;
@@ -90,19 +83,6 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
 
       $has_pending = count($iterator) > 0;
       
-      // Fallback for some environments where strings might still be used
-      if (!$has_pending) {
-         $iterator = $DB->request([
-            'FROM'  => 'glpi_ticketvalidations',
-            'WHERE' => [
-               'tickets_id' => $ticket_id,
-               'status'     => 'waiting'
-            ],
-            'LIMIT' => 1
-         ]);
-         $has_pending = count($iterator) > 0;
-      }
-
       Toolbox::logInFile('validationlock', "RESULT: Ticket $ticket_id has pending validations: " . ($has_pending ? 'YES' : 'NO') . " (Using WAITING status: $waiting_status)\n");
 
       return $has_pending;

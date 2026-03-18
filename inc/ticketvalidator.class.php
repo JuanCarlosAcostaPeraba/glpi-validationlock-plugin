@@ -20,8 +20,6 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
       $new_status = (int)$ticket->input['status'];
       $id = (int)($ticket->fields['id'] ?? $ticket->input['id'] ?? 0);
 
-      Toolbox::logInFile('validationlock', "Checking status change to $new_status for Ticket ID: $id\n");
-
       if (in_array($new_status, [CommonITILObject::SOLVED, CommonITILObject::CLOSED])) {
          if ($this->hasPendingValidation($id)) {
             $msg = __('Cannot resolve or close ticket while there are pending validations.', 'validationlock');
@@ -41,8 +39,6 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
     */
    public function validateSolutionAddition(ITILSolution $solution) {
       $ticket_id = (int)($solution->input['items_id'] ?? 0);
-
-      Toolbox::logInFile('validationlock', "Checking solution addition for Ticket ID: $ticket_id\n");
 
       if ($ticket_id > 0 && $this->hasPendingValidation($ticket_id)) {
          $msg = __('Cannot add a solution while there are pending validations.', 'validationlock');
@@ -81,10 +77,6 @@ class PluginValidationlockTicketValidator extends CommonGLPI {
          'LIMIT' => 1
       ]);
 
-      $has_pending = count($iterator) > 0;
-      
-      Toolbox::logInFile('validationlock', "RESULT: Ticket $ticket_id has pending validations: " . ($has_pending ? 'YES' : 'NO') . " (Using WAITING status: $waiting_status)\n");
-
-      return $has_pending;
+      return count($iterator) > 0;
    }
 }

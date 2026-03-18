@@ -3,13 +3,28 @@
  * Plugin class for validationlock.
  */
 
-class PluginValidationlockPlugin extends CommonDBTM {
+class PluginValidationlock extends CommonGLPI {
+
    /**
-    * Description of the plugin.
-    * 
+    * Get plugin name
+    *
     * @return string
     */
    static function getTypeName($nb = 0) {
       return __('Validation Lock', 'validationlock');
+   }
+
+   /**
+    * Configuration from the plugin list
+    */
+   function getIcon() {
+      return 'logo.png';
+   }
+
+   /**
+    * Copyright details
+    */
+   static function getCopyright() {
+      return 'Copyright (C) 2026 Juan Carlos Acosta Peraba';
    }
 }

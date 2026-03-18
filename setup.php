@@ -54,3 +54,17 @@ function plugin_validationlock_check_prerequisites() {
 function plugin_validationlock_check_config() {
    return true;
 }
+
+/**
+ * Install the plugin.
+ */
+function plugin_validationlock_install() {
+   return true;
+}
+
+/**
+ * Uninstall the plugin.
+ */
+function plugin_validationlock_uninstall() {
+   return true;
+}

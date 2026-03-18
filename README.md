@@ -1,7 +1,7 @@
 # Validation Lock for GLPI
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![GLPI: >=10.0](https://img.shields.io/badge/GLPI-%3E%3D10.0-orange.svg)](https://glpi-project.org/)
+[![GLPI: >=11.0](https://img.shields.io/badge/GLPI-%3E%3D11.0-orange.svg)](https://glpi-project.org/)
 
 **Validation Lock** is a professional plugin for GLPI designed to enforce data integrity and improve the ticket resolution workflow. It prevents tickets from being resolved or closed, and blocks the addition of solutions, as long as there are pending validations.
 

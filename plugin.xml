@@ -1,0 +1,99 @@
+<root>
+	<name>Validation Lock</name>
+	<key>validationlock</key>
+
+	<!-- stable | unstable | beta | alpha -->
+	<state>stable</state>
+
+	<!-- 40x40px or bigger. Marketplace will resize it. -->
+	<logo>https://raw.githubusercontent.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/main/assets/logo.png</logo>
+
+	<description>
+		<short>
+			<en>Prevent ticket resolution while validations are pending.</en>
+			<es_ES>Evita el cierre de tickets mientras haya validaciones pendientes.</es_ES>
+		</short>
+		<long>
+			<en><![CDATA[
+**Validation Lock** is a professional plugin for GLPI designed to enforce data integrity and improve the ticket resolution workflow.
+
+Key features:
+- **Block Resolution**: Prevent status change to "Solved" or "Closed" if any validation is in "Pending" status.
+- **Block Solutions**: Prevent adding new solutions to a ticket with active validation requests.
+- **Clear Feedback**: Provides clear error messages to users in their preferred language.
+- **Backend Enforcement**: Validations are performed on the server side for maximum security.
+- **Internationalization**: Fully translated into English and Spanish.
+
+Designed to improve daily ticket management efficiency.
+
+Developed for real-world usage at the **Hospital Universitario de Canarias (HUC)**.
+			]]></en>
+
+			<es_ES><![CDATA[
+**Validation Lock** es un plugin profesional para GLPI diseñado para garantizar la integridad de los datos y mejorar el flujo de resolución de tickets.
+
+Características principales:
+- **Bloqueo de Resolución**: Evita el cambio de estado a "Solucionado" o "Cerrado" si alguna validación está en estado "Pendiente".
+- **Bloqueo de Soluciones**: Evita añadir nuevas soluciones a un ticket con solicitudes de validación activas.
+- **Feedback Claro**: Proporciona mensajes de error claros a los usuarios en su idioma preferido.
+- **Seguridad en Backend**: Las validaciones se realizan en el lado del servidor para máxima seguridad.
+- **Internacionalización**: Totalmente traducido al inglés y español.
+
+Diseñado para mejorar la eficiencia en la gestión diaria de tickets.
+
+Desarrollado para uso real en el **Hospital Universitario de Canarias (HUC)**.
+			]]></es_ES>
+		</long>
+	</description>
+
+	<homepage>https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin</homepage>
+
+	<download>https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/releases</download>
+	<issues>https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/issues</issues>
+	<readme>https://raw.githubusercontent.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/main/README.md</readme>
+
+	<authors>
+		<author>Juan Carlos Acosta Perabá and contributors</author>
+	</authors>
+
+	<versions>
+		<version>
+			<num>1.0.2</num>
+			<compatibility>~11.0.0</compatibility>
+			<download_url>https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/releases/download/v1.0.2/validationlock-1.0.2.zip</download_url>
+		</version>
+	</versions>
+
+	<langs>
+		<lang>en_GB</lang>
+		<lang>es_ES</lang>
+	</langs>
+
+	<license>GPL v3+</license>
+
+	<tags>
+		<en>
+			<tag>validation</tag>
+			<tag>lock</tag>
+			<tag>ticket</tag>
+			<tag>workflow</tag>
+			<tag>compliance</tag>
+			<tag>glpi</tag>
+			<tag>plugin</tag>
+		</en>
+		<es_ES>
+			<tag>validación</tag>
+			<tag>bloqueo</tag>
+			<tag>ticket</tag>
+			<tag>flujo</tag>
+			<tag>cumplimiento</tag>
+			<tag>glpi</tag>
+			<tag>plugin</tag>
+		</es_ES>
+	</tags>
+
+	<screenshots>
+		<!-- To be added in the future if needed -->
+	</screenshots>
+
+</root>

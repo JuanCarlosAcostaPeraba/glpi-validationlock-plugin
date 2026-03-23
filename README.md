@@ -5,38 +5,45 @@
 
 **Validation Lock** is a professional plugin for GLPI designed to enforce data integrity and improve the ticket resolution workflow. It prevents tickets from being resolved or closed, and blocks the addition of solutions, as long as there are pending validations.
 
-## Key Features
+---
+
+## 🚀 Key Features
 
 - 🛑 **Block Resolution**: Prevent status change to "Solved" or "Closed" if any validation is in "Pending" status.
 - 🚫 **Block Solutions**: Prevent adding new solutions to a ticket with active validation requests.
 - 💬 **Clear Feedback**: Provides clear error messages to users in their preferred language.
 - ⚡ **Backend Enforcement**: Validations are performed on the server side for maximum security.
-- 🌍 **Internationalization**: Fully translated into English and Spanish.
+- 🌍 **Internationalization**: Fully translated into English (en_GB) and Spanish (es_ES).
 
-## Requirements
+## 📋 Requirements
 
-- GLPI >= 11.0.
-- PHP >= 7.4.
+- **GLPI** >= 11.0.0
+- **PHP** >= 8.1 (standard for GLPI 11)
 
-## Installation
+## 🛠️ Installation
 
-1. Clone or download the repository into your GLPI `plugins/` directory.
-2. Ensure the directory is named `validationlock`.
-3. Go to **Setup > Plugins** in your GLPI instance.
-4. Click **Install** and then **Activate**.
-   - *Note: The installation process will attempt to compile the translation files (`.mo`) automatically if `msgfmt` is available on your server.*
+1. Download the latest release from [GitHub Releases](https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin/releases).
+2. Extract the archive into your GLPI `plugins/` directory.
+3. Ensure the directory is named `validationlock`.
+4. Go to **Setup > Plugins** in your GLPI instance.
+5. Click **Install** and then **Activate**.
 
-## Marketplace Compliance
+> [!NOTE]
+> The installation process will attempt to compile the translation files (`.mo`) automatically if `msgfmt` is available on your server.
+
+## 🏛️ Marketplace Compliance
 
 This plugin follows official GLPI development guidelines:
 - No core modifications.
-- Uses GLPI Hooks system.
+- Uses GLPI Hooks system (`pre_item_update`, `pre_item_add`).
 - Secure database queries using `$DB->request()`.
 - CSRF compliance.
+- Structured metadata (`plugin.xml`).
 
-## License
+## 📄 License
 
 This plugin is licensed under the [GPLv3+](LICENSE).
 
 ---
-Developed by **Juan Carlos Acosta Peraba**
+Developed for real-world usage at **Hospital Universitario de Canarias (HUC)**.
+Maintained by **Juan Carlos Acosta Perabá**.

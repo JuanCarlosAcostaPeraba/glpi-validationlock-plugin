@@ -18,7 +18,7 @@ class PluginValidationlock extends CommonGLPI {
     * Configuration from the plugin list
     */
    function getIcon() {
-      return 'logo.png';
+      return 'assets/logo.png';
    }
 
    /**

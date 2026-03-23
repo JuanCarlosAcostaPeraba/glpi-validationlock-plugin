@@ -30,7 +30,7 @@ function plugin_version_validationlock() {
    return [
       'name'           => __('Validation Lock', 'validationlock'),
       'version'        => '1.0.2',
-      'author'         => 'Juan Carlos Acosta Peraba',
+      'author'         => 'Juan Carlos Acosta Perabá',
       'license'        => 'GPLv3+',
       'homepage'       => 'https://github.com/JuanCarlosAcostaPeraba/glpi-validationlock-plugin',
       'id'             => 'validationlock',

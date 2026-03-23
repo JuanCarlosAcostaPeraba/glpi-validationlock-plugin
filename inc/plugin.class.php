@@ -25,6 +25,6 @@ class PluginValidationlock extends CommonGLPI {
     * Copyright details
     */
    static function getCopyright() {
-      return 'Copyright (C) 2026 Juan Carlos Acosta Peraba';
+      return 'Copyright (C) 2026 Juan Carlos Acosta Perabá';
    }
 }

@@ -62,16 +62,6 @@ function plugin_validationlock_check_config() {
  * Install the plugin.
  */
 function plugin_validationlock_install() {
-   // Attempt to compile locales automatically if msgfmt is available
-   $locales_dir = dirname(__FILE__) . '/locales';
-   $po_files = glob($locales_dir . '/*.po');
-   if ($po_files) {
-      foreach ($po_files as $po_file) {
-         $mo_file = str_replace('.po', '.mo', $po_file);
-         // Use @ to suppress warnings if passthru is disabled on the server
-         @passthru("msgfmt -f -o " . escapeshellarg($mo_file) . " " . escapeshellarg($po_file));
-      }
-   }
    return true;
 }
 
